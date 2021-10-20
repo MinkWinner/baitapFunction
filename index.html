@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- https://baitapham.vercel.app/ -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập hàm</title>
+    
+    <!-- Boot Strap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <main class="container mt-5 calculator">
+        <div class="row bgimg">
+            <div class="col-2 left__side">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="baitap_1" data-toggle="pill" href="#pill_1" role="tab" aria-controls="pill_1" aria-selected="true">Bài 1</a>
+                <a class="nav-link" id="baitap_2" data-toggle="pill" href="#pill_2" role="tab" aria-controls="pill_2" aria-selected="false">Bài 2</a>
+                <a class="nav-link" id="baitap_3" data-toggle="pill" href="#pill_3" role="tab" aria-controls="pill_3" aria-selected="false">Bài 3</a>
+                <a class="nav-link" id="baitap_4" data-toggle="pill" href="#pill_4" role="tab" aria-controls="pill_4" aria-selected="false">Bài 4</a>
+              </div>
+            </div>
+            <div class="col-10 right__side">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="pill_1" role="tabpanel" aria-labelledby="baitap_1">
+                    <h2>🏫 Quản lý tuyển sinh</h2>
+                    <div class="hint">
+                        <p><b>💡Gợi ý:</b></p>
+                        <details>
+                            <summary>Mở rộng để xem thêm</summary>
+                            <ul>
+                                <li>Điểm chuẩn của hội đồng các bạn tự nhập thêm. Điểm chuẩn của 3 môn thường tối đa 30đ.
+                                    Nên có thể lấy các điểm chuẩn như sau: 30,25,29</li>
+                                <li>Ô nhập khu vực, đối tượng có thể tạo bằng input, dropdown hoặc radio.<br>
+                                    Nếu không thuộc khu vực hoặc đối tượng trong danh sách thì điểm khu vực và điểm đối tượng sẽ là 0</li>
+                                <li>Nếu có 1 trong 3 môn bị điểm 0 thì lặp tức cho rớt không cần kiểm tra tổng điểm có lớn hơn hoặc bằng điểm chuẩn hay không</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <form action="#" class="row">
+                        <div class="col-4">
+                            <input type="number" id="grade-standard" placeholder="Điểm chuẩn">
+                        </div>
+                        <div class="col-4">
+                            <select class="form-control form__input" id="location" class="align-middle">
+                                <option>Chọn khu vực</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select class="form-control form__input" id="object">
+                                <option>Chọn đối tượng</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="grade-subject1" placeholder="Điểm môn thứ 1">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="grade-subject2" placeholder="Điểm môn thứ 2">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="grade-subject3" placeholder="Điểm môn thứ 3">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" id="btnResult">Kết quả</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="alert alert-success" role="alert">
+                                👉<span id="txtResult"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_2" role="tabpanel" aria-labelledby="baitap_2">
+                    <h2>🔋 Tính tiền điện</h2>
+                    <div class="hint">
+                        <p><b>💡Gợi ý:</b></p>
+                        <details>
+                            <summary>Mở rộng để xem thêm</summary>
+                            <p class="px-3">Cách tính tiền điện gần giống với bài tính tiền Grab trên lớp</p>
+                            <img class="img-fluid px-3" src="./img/Bai2.JPG" alt="tutorial">
+                        </details>
+                    </div>
+                    <form action="#" class="row">
+                        <div class="col-4">
+                            <input type="text" id="fullName" placeholder="Nhập họ tên">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="kW" placeholder="Nhập số kW">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" id="btnElectBill">Tính tiền điện</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="alert alert-success" role="alert">
+                                👉<span id="txtElectBill"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_3" role="tabpanel" aria-labelledby="baitap_3">
+                    <h2>💰 Tính thuế thu nhập cá nhân</h2>
+                    <div class="hint">
+                        <p><b>💡Gợi ý:</b></p>
+                        <details>
+                            <summary>Mở rộng để xem thêm</summary>
+                            <ul>
+                                <li>Tổng thu nhập năm các bạn tự nhập thêm. Giả sử 1 tháng thu nhập 10tr thì 1 năm sẽ là 10 x 12 = 120tr => các bạn sẽ nhập 120000000</li>
+                                <li>Demo hiện tại đang tính % thuế theo điều kiện mà thu nhập chịu thuế rơi vào. Vd: thu nhập chịu thuế là 110tr thì tính 10% của 110tr => 110tr * 0.1</li>
+                                <li>Do đề bài không ghi rõ yêu cầu tính thuế nên cũng có thể tính theo cách chia ra từng đoạn thuế giống bài tính tiền grab. Vd: 110tr => 60tr *0.05 + (110tr-60tr) * 0.1</li>
+                                <li>Sử dụng input có type number thì khi nhập 120000000, có thể nhập ngắn gọn thành 120e+6</li>
+                                <li>Đối với các con số hàng triệu có nhiều số 0, có thể viết ngắn gọn trong code như sau:<br>
+                                    4tr => 4000000 => 4e+6</li>
+                                <li>Dùng NumberFormat để số tiền hiển thị đẹp hơn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat" target="blank">NumberFormat</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <form action="#" class="row">
+                        <div class="col-4">
+                            <input type="text" id="fullName-input" placeholder="Nhập họ tên">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="incomeAnnual" placeholder="Tổng thu nhập năm">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="member" placeholder="Số người phụ thuộc">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" id="btnTaxFee">Tính tiền thuế</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="alert alert-success" role="alert">
+                                👉<span id="txtTaxFee"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_4" role="tabpanel" aria-labelledby="baitap_4">
+                    <h2>🕸️ Tính tiền cáp</h2>
+                    <div class="hint">
+                        <p><b>💡Gợi ý:</b></p>
+                        <details>
+                            <summary>Mở rộng để xem thêm</summary>
+                            <ul>
+                                <li>Sử dụng event onchange của dropdown để xử lý ẩn hiện cho ô nhập số kết nối khi chọn loại khách hàng: <a href="https://www.w3schools.com/jsref/event_onchange.asp" target="blank">Onchange</a></li>
+                                <li>Đối với loại khách hàng Doanh Nghiệp, tổng 10 kết nối đầu là 75$<br>
+                                    => đây là giá trọn gói, nếu doanh nghiệp lắp đặt số kết nối nhỏ hơn 10 thì vẫn phải đóng 75$.<br>
+                                    Vd: 6 kết nối thì vẫn sẽ cộng 75$ vào tổng tiền.<br>
+                                    => Nếu lắp trên 10 kết nối thì kết nối thứ 11 trở đi sẽ tính 5$/kết nối.</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <form action="#" class="row">
+                        <div class="col-4">
+                            <select class="form-control form__input" id="cust" onchange="disableInput()">
+                                <option>Chọn loại khách hàng</option>
+                                <option value="ND">Nhà dân</option>
+                                <option value="DN">Doanh nghiệp</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="idCustomer" placeholder="Nhập mã khách hàng">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="channel" placeholder="Số kênh cao cấp">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" id="connect" style="display:none" placeholder="Số kết nối">
+                        </div>
+                        <div class="col-12">
+                            <button onclick="Netfee()" class="btn btn-primary" type="button" id="btnNet">Tính tiền cáp</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="alert alert-success" role="alert">
+                                👉<span id="txtNet"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+</body>
+
+    <!-- Boot Strap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Main Js -->
+    <script src="./js/main.js"></script>
+</html>
