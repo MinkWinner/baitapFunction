@@ -20,7 +20,7 @@ function pass() {
     }
   }
   function objects() {
-    switch (document.getElementById("object").value) {
+    switch (Number(document.getElementById("object").value)) {
       case 1:
         return 2.5;
       case 2:
@@ -144,8 +144,11 @@ function Netfee() {
   document.getElementById("txtNet").innerHTML =
     "Mã khách hàng: " +
     id +
-    "; Tiền cáp: $" +
-    Intl.NumberFormat("en-IN").format(bill);
+    "; Tiền cáp: " +
+    Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(bill);
 }
 
 function disableInput() {
